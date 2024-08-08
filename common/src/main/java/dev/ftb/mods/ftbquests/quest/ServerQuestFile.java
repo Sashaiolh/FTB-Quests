@@ -28,6 +28,7 @@ import net.minecraft.world.level.storage.LevelResource;
 
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Collections;
 import java.util.Date;
 import java.util.UUID;
@@ -74,7 +75,7 @@ public class ServerQuestFile extends QuestFile {
 			isLoading = false;
 		}
 
-		Path path = server.getWorldPath(FTBQUESTS_DATA);
+		Path path = Paths.get("/home/ftp/EnigmaRPG1192/core/questsSyncData");
 
 		if (Files.exists(path)) {
 			try (Stream<Path> s = Files.list(path)) {

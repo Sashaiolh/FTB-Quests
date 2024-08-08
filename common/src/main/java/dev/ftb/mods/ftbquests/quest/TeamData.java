@@ -31,6 +31,7 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class TeamData {
@@ -86,7 +87,7 @@ public class TeamData {
 
 	public void saveIfChanged() {
 		if (shouldSave && file instanceof ServerQuestFile sqf) {
-			Path path = sqf.server.getWorldPath(ServerQuestFile.FTBQUESTS_DATA);
+			Path path = Paths.get("/home/ftp/EnigmaRPG1192/core/questsSyncData");
 			SNBT.write(path.resolve(uuid + ".snbt"), serializeNBT());
 			shouldSave = false;
 		}
